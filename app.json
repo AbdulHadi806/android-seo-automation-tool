@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "com.scoautomation",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -16,15 +16,33 @@
       "supportsTablet": true
     },
     "android": {
+     
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.scoautomation",
+      "googleServicesFile": "./google-services.json",
+      "permission": [
+        
+          "INTERNET"
+        
+      ]
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyD93LL68PIk2675GEvkvu7U5iqh4jtqmvs",
+          "authDomain": "ai-seo-tool-14a70.firebaseapp.com",
+          "projectId": "ai-seo-tool-14a70",
+          "storageBucket": "ai-seo-tool-14a70.appspot.com",
+          "messagingSenderId": "7401357775",
+          "appId": "1:7401357775:web:ba6d6d4d856bcb2fa6d2ba"
+        }
+      }
     },
     "plugins": [
       "expo-router"

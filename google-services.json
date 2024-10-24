@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "7401357775",
+    "project_id": "ai-seo-tool-14a70",
+    "storage_bucket": "ai-seo-tool-14a70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7401357775:android:45c46fa67a6af588a6d2ba",
+        "android_client_info": {
+          "package_name": "com.seoautomation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7401357775-kj6mgmdpm7r91sjbl166uck1as36dji5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.seoautomation",
+            "certificate_hash": "12388f84ba3075f84769d2d2d839e2eac039c8c6"
+          }
+        },
+        {
+          "client_id": "7401357775-3995845b1edosov88e29amb2rlhtu292.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQH7wNxD9QARc9IR33Da9mmBMzFwfhFz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7401357775-3995845b1edosov88e29amb2rlhtu292.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
