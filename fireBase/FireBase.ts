@@ -31,19 +31,19 @@ const storage = getStorage(app);
 const provider = new GoogleAuthProvider();
 
 // Function to handle Google sign-in
-const signInWithGoogle = async (id_token: string) => {
-  try {
-    const credential = GoogleAuthProvider.credential(id_token);
-    const userCredential = await signInWithCredential(auth, credential);
-    const user = userCredential.user;
-    return { success: true, user };
-  } catch (error) {
-    alert(JSON.stringify(error))
-    console.error('Error during Google sign-in:', error);
-    console.log(".....",error)
-    return { success: false, message: error.message };
-  }
-};
+// const signInWithGoogle = async (id_token: string) => {
+//   try {
+//     const credential = GoogleAuthProvider.credential(id_token);
+//     const userCredential = await signInWithCredential(auth, credential);
+//     const user = userCredential.user;
+//     return { success: true, user };
+//   } catch (error) {
+//     alert(JSON.stringify(error))
+//     console.error('Error during Google sign-in:', error);
+//     console.log(".....",error)
+//     return { success: false, message: error.message };
+//   }
+// };
 
 // Function to handle user sign-up
 const signUp = async (email: string, password: string) => {
@@ -83,4 +83,4 @@ const signIn = async (email: string, password: string) => {
 };
 
 // Export Firebase services and functions
-export { auth, firestore, storage, signUp, provider, signInWithGoogle, resetPassword ,signIn}; // Export the new resetPassword function
+export { auth, firestore, storage, signUp, provider, resetPassword ,signIn}; // Export the new resetPassword function

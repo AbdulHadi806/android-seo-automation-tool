@@ -22,11 +22,11 @@ const Layout: React.FC = () => {
   }
 
   return (
-    // <Stack>
-    //   <Stack.Screen name="SignUp" options={{ headerShown: false }} />
-    //   <Stack.Screen name="Login" options={{ headerShown: false }} />
-    // </Stack>
-    <SignUp />
+    <Stack initialRouteName="SignUp">
+      <Stack.Screen name="SignUp" options={{ headerShown: false }} />
+      <Stack.Screen name="Login" options={{ headerShown: false }} />
+    </Stack>
+    // <SignUp />
     // <Login />
   );
 };

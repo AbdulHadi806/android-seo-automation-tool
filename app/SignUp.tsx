@@ -12,9 +12,10 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
-import { signUp, signInWithGoogle } from "../fireBase/FireBase"; // Adjust the import path accordingly
+import { signUp } from "../fireBase/FireBase"; // Adjust the import path accordingly
 import { useRouter } from "expo-router";
-import * as Google from "expo-auth-session/providers/google"; // Move this import here
+// import * as Google from "expo-auth-session/providers/google"; // Move this import here
+// import { makeRedirectUri } from "expo-auth-session";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -24,20 +25,36 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState("");
   const router = useRouter();
 
-  // Move the hook inside the component
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId:
-      "963156443293-l30sdcpb38t0p8ckb7ovqlaq7ji7j9o5.apps.googleusercontent.com",
-    webClientId:
-      "963156443293-pkjkugaripbbabr8qr00hbujmcce3n10.apps.googleusercontent.com",
-  });
+  // const EXPO_REDIRECT_PARAMS = {
+  //   useProxy: true,
+  //   projectNameForProxy: `@username/com.scoautomation`,
+  // };
 
-  React.useEffect(() => {
-    if (response?.type === "success") {
-      const { id_token } = response.params;
-      signInWithGoogle(id_token);
-    }
-  }, [response]);
+  // const appOwnership = "expo";
+
+  // const NATIVE_REDIRECT_PARAMS = { native: "com.scoautomation://" };
+  // const REDIRECT_PARAMS =
+  //   appOwnership === "expo"
+  //     ? { useProxy: true }
+  //     : { native: "com.scoautomation://" };
+
+  // // Move the hook inside the component
+  // const [request, response, promptAsync] = Google.useAuthRequest({
+  //   expoClientId: "bH5NxWjuqU8I19YIAvCwSlGgKlga",
+  //   androidClientId:
+  //     "963156443293-l30sdcpb38t0p8ckb7ovqlaq7ji7j9o5.apps.googleusercontent.com",
+  //   webClientId:
+  //     "963156443293-pkjkugaripbbabr8qr00hbujmcce3n10.apps.googleusercontent.com",
+  //   scopes: ["profile", "email"],
+  //   redirectUri: makeRedirectUri(REDIRECT_PARAMS),
+  // });
+
+  // React.useEffect(() => {
+  //   if (response?.type === "success") {
+  //     const { id_token } = response.params;
+  //     signInWithGoogle(id_token);
+  //   }
+  // }, [response]);
 
   const handleSignUp = async () => {
     setEmailError("");
@@ -69,9 +86,9 @@ const SignUp = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    await promptAsync();
-  };
+  // const handleGoogleSignIn = async () => {
+  //   await promptAsync();
+  // };
 
   return (
     <KeyboardAvoidingView
@@ -134,7 +151,7 @@ const SignUp = () => {
             <View style={styles.line} />
           </View>
 
-          <TouchableOpacity style={styles.button} onPress={handleGoogleSignIn}>
+          <TouchableOpacity style={styles.button}>
             <Image
               source={require("../assets/images/google.png")}
               style={styles.googleImage}
